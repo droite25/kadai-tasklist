@@ -59,7 +59,7 @@ class TasksController extends Controller
         $request->user()->tasklists()->create(array(
             'content' => $request->content,
             // 'title' => $request->title,
-            'status' => 'test',
+            'status' => $request->status,
             'user_id' => $request->user_id
             ));
         return redirect('/');
@@ -108,14 +108,6 @@ class TasksController extends Controller
         }
         return redirect('/');
     }
-
-    // public function destroy($id)
-    // {
-    //     $task = Task::find($id);
-    //     $task->delete();
-
-    //     return redirect('/');
-    // }
     
     public function destroy($id)
     {
